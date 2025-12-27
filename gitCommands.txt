@@ -68,3 +68,7 @@ git pull origin main
   
 github: A web-based platform for hosting Git repositories.  View code, manage repos, track issues. visualy browsing repositories in browser
 GitHub CLI: A command-line tool (gh) to interact with GitHub directly from the terminal.  for Terminal workflow and automation scripts
+
+Rename file:
+-----------]
+$mv addNewFile.txt test1.txt
