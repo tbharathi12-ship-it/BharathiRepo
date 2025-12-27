@@ -6,6 +6,9 @@ git config --global  --list
 git config  --global user.name 'xxx'
 git config  --global user.email 'xxx'
 
+--change to another branch
+git checkout develop  (switch to local develop branch)
+git checkout main    (switch to loacal main branch)
 --create new local repo and push your F5-pool-monitor project into  the'
 local repo.
 goto the folder  - terminal automatically take u to the proj folder
@@ -15,7 +18,7 @@ goto the folder  - terminal automatically take u to the proj folder
 
 > git add .                 - stage files 
 > git reset HEAD readme.md - unstage the staged file  
-> git checkout --readme.md - bring it to last commit in ur local branch (sameas undo)
+> git checkout -- readme.md - bring it to last commit in ur local branch (sameas undo)
      
 > git commit -m 'message'    - commits to local repo
 > git status - now it should say nothing to commit
@@ -38,7 +41,27 @@ To push my local Workspace folder to Remote repo
 git branch -M main    name ur current local branch as 'main'  (even if named as something else, rename to 'main' forcibly with parm -M)
 git push -u origin main           -u upstream link ur local branch to remote branch, push the local branch main into remote repo Origin.
 
+pull remote into local with comparing diff before pull
+------------------------------------------------------------
+1. fetch into remote tracking branches
+git fetch origin  (same as get fetch origin main)
+- fetches main into remote tracking branch (local copy of whats in remote) 
+git fetch -  fetches all branches from remote (origin) into remote tracking branch
+2. compare the diff
+git status - to know ur main is how many commits behind the remote main (origin/main )
+or, u can also see the files and differences under'graph' double clicking the files
+or  git diff origin/main (same as git diff origin/main main)
+3.merge into local
+  git merge origin/main
 
+ORIGIN means remote repo
+origin/main means remote-tracking branch
+
+so the commands goes like this.
+git fetch origin   main  
+git merge origin/main main 
+git diff origin/main main  
+git pull origin main
 
 
                |
